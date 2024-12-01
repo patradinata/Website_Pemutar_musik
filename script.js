@@ -102,6 +102,16 @@ const musicData = [
     artist: "Putri Ariani",
     musicPath: "dj-senja.mp3",
   },
+
+  {
+    backgroundImage: "poster-6.jpg",
+    posterUrl: "poster-6.jpg",
+    title: "Tresno Liyane",
+    album: "Tresno Liyane",
+    year: 2022,
+    artist: "NorthSle",
+    musicPath: "tresno-liyane.mp3",
+  },
 ];
 
 /**
