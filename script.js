@@ -130,6 +130,15 @@ const musicData = [
     artist: "Mahasiswa",
     musicPath: "darah-juang.mp3",
   },
+  {
+    backgroundImage: "poster-2.jpg",
+    posterUrl: "poster-2.jpg",
+    title: "Penyampai Khasa",
+    album: "Lagu Lampung",
+    year: 2023,
+    artist: "Lampung",
+    musicPath: "penyampai.mp3",
+  },
 ];
 
 /**
