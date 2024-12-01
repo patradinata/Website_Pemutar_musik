@@ -14,20 +14,20 @@ const musicData = [
   {
     backgroundImage: "poster-2.jpg",
     posterUrl: "poster-2.jpg",
-    title: "We Are Going To Be Ok (Master)",
-    album: "No Spirit",
-    year: 2022,
-    artist: "No Spirit x Jhove",
-    musicPath: "music-2.mp3",
+    title: "Kehilanganmu berat bagiku",
+    album: "Pujaan Hati",
+    year: 2008,
+    artist: "Kangen Band",
+    musicPath: "kangen-band.mp3",
   },
   {
     backgroundImage: "poster-3.jpg",
     posterUrl: "poster-3.jpg",
-    title: "Winter Meadow",
+    title: "Anak Lanang",
     album: "No Spirit",
     year: 2022,
-    artist: "No Spirit x  juniorodeo",
-    musicPath: "music-3.mp3",
+    artist: "Ndarboy Genk",
+    musicPath: "anak-lanang.mp3",
   },
   {
     backgroundImage: "poster-4.jpg",
@@ -47,6 +47,33 @@ const musicData = [
     artist: "Shany, Opick",
     musicPath: "music-6.mp3",
   },
+  {
+    backgroundImage: "poster-2.jpg",
+    posterUrl: "poster-2.jpg",
+    title: "Mencoba untuk setia",
+    album: "Mencoba untuk setia",
+    year: 2024,
+    artist: "Adista",
+    musicPath: "matahari.mp3",
+  },
+  {
+    backgroundImage: "masdho.jpg",
+    posterUrl: "masdho.jpg",
+    title: "Nganggur",
+    album: "Masdho",
+    year: 2023,
+    artist: "Masdho",
+    musicPath: "nganggur.mp3",
+  },
+  {
+    backgroundImage: "poster-2.jpg",
+    posterUrl: "poster-2.jpg",
+    title: "Ku Puja Puja",
+    album: "Ku Puja Puja",
+    year: 2022,
+    artist: "Ipank",
+    musicPath: "Ipank - Ku Puja Puja.mp3",
+  },
 ];
 
 /**
@@ -59,12 +86,7 @@ const addEventOnElements = function (elements, eventType, callback) {
   }
 };
 
-/**
- * PLAYLIST
- *
- * add all music in playlist, from 'musicData'
- */
-
+// playlist musik
 const playlist = document.querySelector("[data-music-list]");
 
 for (let i = 0, len = musicData.length; i < len; i++) {
@@ -82,12 +104,7 @@ for (let i = 0, len = musicData.length; i < len; i++) {
   `;
 }
 
-/**
- * PLAYLIST MODAL SIDEBAR TOGGLE
- *
- * show 'playlist' modal sidebar when click on playlist button in top app bar
- * and hide when click on overlay or any playlist-item
- */
+// Toggle class active untuk sidebar
 
 const playlistSideModal = document.querySelector("[data-playlist]");
 const playlistTogglers = document.querySelectorAll("[data-playlist-toggler]");
@@ -121,12 +138,7 @@ addEventOnElements(playlistItems, "click", function () {
   changePlaylistItem();
 });
 
-/**
- * PLAYER
- *
- * change all visual information on player, based on current music
- */
-
+// Player
 const playerBanner = document.querySelector("[data-player-banner]");
 const playerTitle = document.querySelector("[data-title]");
 const playerAlbum = document.querySelector("[data-album]");
@@ -171,12 +183,7 @@ const updateDuration = function () {
 
 audioSource.addEventListener("loadeddata", updateDuration);
 
-/**
- * PLAY MUSIC
- *
- * play and pause music when click on play button
- */
-
+// Play dan pause musik
 const playBtn = document.querySelector("[data-play-btn]");
 
 let playInterval;
@@ -225,12 +232,7 @@ const updateRangeFill = function () {
 
 addEventOnElements(ranges, "input", updateRangeFill);
 
-/**
- * SEEK MUSIC
- *
- * seek music while changing player seek range
- */
-
+// seek musik
 const seek = function () {
   audioSource.currentTime = playerSeekRange.value;
   playerRunningTime.textContent = getTimecode(playerSeekRange.value);
@@ -238,10 +240,7 @@ const seek = function () {
 
 playerSeekRange.addEventListener("input", seek);
 
-/**
- * END MUSIC
- */
-
+// End musik
 const isMusicEnd = function () {
   if (audioSource.ended) {
     playBtn.classList.remove("active");
@@ -252,10 +251,7 @@ const isMusicEnd = function () {
   }
 };
 
-/**
- * SKIP TO NEXT MUSIC
- */
-
+// skip next musik
 const playerSkipNextBtn = document.querySelector("[data-skip-next]");
 
 const skipNext = function () {
@@ -291,10 +287,7 @@ const skipPrev = function () {
 
 playerSkipPrevBtn.addEventListener("click", skipPrev);
 
-/**
- * SHUFFLE MUSIC
- */
-
+// Shuffle Musik
 const getRandomMusic = () => Math.floor(Math.random() * musicData.length);
 const shuffleMusic = () => (currentMusic = getRandomMusic());
 
@@ -353,3 +346,23 @@ const muteVolume = function () {
 };
 
 playerVolumeBtn.addEventListener("click", muteVolume);
+
+function apply(operation, ...args) {
+  // kita bisa menambahkan kode lain sebelum operation dijalankan.
+
+  return operation(...args);
+}
+
+function sum(a, b, c) {
+  return a + b + c;
+}
+
+function discount(disc, value) {
+  return value - (disc / 100) * value;
+}
+
+const productPrice = apply(sum, 100, 100, 200);
+const withDiscount = apply(discount, 25, productPrice);
+
+console.log("Product price:", productPrice); // Output: Product price: 400
+console.log("With discount 25%:", withDiscount); // Output: With discount 25%: 300

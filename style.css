@@ -242,6 +242,7 @@ body:hover::-webkit-scrollbar-thumb {
 
 .logo {
   gap: 12px;
+  margin-left: 10px;
 }
 
 /*-----------------------------------*\
@@ -652,7 +653,7 @@ body:hover::-webkit-scrollbar-thumb {
 }
 
 /**
- * responsive for large than 1200px screen
+ * responsive diatas 1200px
  */
 
 @media (min-width: 1200px) {
