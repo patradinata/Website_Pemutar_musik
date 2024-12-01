@@ -84,6 +84,15 @@ const musicData = [
     artist: "Nasyid Kahlil Fajrussalam",
     musicPath: "Ramadhan Tajalla.mp3",
   },
+  {
+    backgroundImage: "poster-4.jpg",
+    posterUrl: "poster-4.jpg",
+    title: "Cintaku Kau Terlantarkan",
+    album: "Cintaku Kau Terlantarkan",
+    year: 2022,
+    artist: "Adista",
+    musicPath: "Cintaku kau terlantarkan.mp3",
+  },
 ];
 
 /**
