@@ -121,6 +121,15 @@ const musicData = [
     artist: "ST-12",
     musicPath: "kebesaranmu.mp3",
   },
+  {
+    backgroundImage: "rama.jpg",
+    posterUrl: "rama.jpg",
+    title: "darah-juang",
+    album: "darah-juang",
+    year: 2022,
+    artist: "Mahasiswa",
+    musicPath: "darah-juang.mp3",
+  },
 ];
 
 /**
