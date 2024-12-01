@@ -74,6 +74,16 @@ const musicData = [
     artist: "Ipank",
     musicPath: "Ipank - Ku Puja Puja.mp3",
   },
+
+  {
+    backgroundImage: "poster-3.jpg",
+    posterUrl: "poster-3.jpg",
+    title: "Ramadhan tajalla",
+    album: "Ramadhan tajalla",
+    year: 2022,
+    artist: "Nasyid Kahlil Fajrussalam",
+    musicPath: "Ramadhan Tajalla.mp3",
+  },
 ];
 
 /**
