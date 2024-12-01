@@ -104,8 +104,8 @@ const musicData = [
   },
 
   {
-    backgroundImage: "poster-6.jpg",
-    posterUrl: "poster-6.jpg",
+    backgroundImage: "poster-4.jpg",
+    posterUrl: "poster-4.jpg",
     title: "Tresno Liyane",
     album: "Tresno Liyane",
     year: 2022,
