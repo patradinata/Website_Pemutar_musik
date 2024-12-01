@@ -112,6 +112,15 @@ const musicData = [
     artist: "NorthSle",
     musicPath: "tresno-liyane.mp3",
   },
+  {
+    backgroundImage: "poster-3.jpg",
+    posterUrl: "poster-3.jpg",
+    title: "kebesaranmu",
+    album: "kebesaranmu",
+    year: 2022,
+    artist: "ST-12",
+    musicPath: "kebesaranmu.mp3",
+  },
 ];
 
 /**
