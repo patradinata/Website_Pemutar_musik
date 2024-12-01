@@ -87,8 +87,8 @@ const musicData = [
   {
     backgroundImage: "poster-4.jpg",
     posterUrl: "poster-4.jpg",
-    title: "Cintaku Kau Terlantarkan",
-    album: "Cintaku Kau Terlantarkan",
+    title: "Cintaku Kau terlantarkan",
+    album: "Cintaku Kau terlantarkan",
     year: 2022,
     artist: "Adista",
     musicPath: "Adista-Cintaku kau terlantarkan.mp3",
