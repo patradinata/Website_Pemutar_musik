@@ -93,6 +93,15 @@ const musicData = [
     artist: "Adista",
     musicPath: "Adista-Cintaku kau terlantarkan.mp3",
   },
+  {
+    backgroundImage: "poster-5.jpg",
+    posterUrl: "poster-5.jpg",
+    title: "Dj senja yang datang diujung langit",
+    album: "Dj senja yang datang diujung langit",
+    year: 2023,
+    artist: "Putri Ariani",
+    musicPath: "dj-senja.mp3",
+  },
 ];
 
 /**
