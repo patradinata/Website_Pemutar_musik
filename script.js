@@ -91,7 +91,7 @@ const musicData = [
     album: "Cintaku Kau Terlantarkan",
     year: 2022,
     artist: "Adista",
-    musicPath: "Cintaku kau terlantarkan.mp3",
+    musicPath: "Adista-Cintaku kau terlantarkan.mp3",
   },
 ];
 
