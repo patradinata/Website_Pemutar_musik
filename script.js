@@ -131,8 +131,8 @@ const musicData = [
     musicPath: "darah-juang.mp3",
   },
   {
-    backgroundImage: "poster-2.jpg",
-    posterUrl: "poster-2.jpg",
+    backgroundImage: "fotoku.jpg",
+    posterUrl: "fotoku.jpg",
     title: "Penyampai Khasa",
     album: "Lagu Lampung",
     year: 2023,
