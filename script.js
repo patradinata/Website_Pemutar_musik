@@ -139,6 +139,16 @@ const musicData = [
     artist: "Lampung",
     musicPath: "penyampai.mp3",
   },
+
+  {
+    backgroundImage: "fotoku.jpg",
+    posterUrl: "fotoku.jpg",
+    title: "Dj Mardua Holong",
+    album: "Mardua holong dutch",
+    year: 2021,
+    artist: "Mardua holong dutch",
+    musicPath: "mardua-holong.mp3",
+  },
 ];
 
 /**
