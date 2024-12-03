@@ -149,6 +149,15 @@ const musicData = [
     artist: "Mardua holong dutch",
     musicPath: "mardua-holong.mp3",
   },
+  {
+    backgroundImage: "andika.jpg",
+    posterUrl: "andika.jpg",
+    title: "Tanda Mata",
+    album: "Lagu Lampung",
+    year: 2021,
+    artist: "Yanti",
+    musicPath: "tandamata.mp3",
+  },
 ];
 
 /**
