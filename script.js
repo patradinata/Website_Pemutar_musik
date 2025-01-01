@@ -427,6 +427,28 @@ const muteVolume = function () {
 
 playerVolumeBtn.addEventListener("click", muteVolume);
 
+const darkModeToggle = document.getElementById("dark-mode-toggle");
+const body = document.body;
+
+const currentTheme = localStorage.getItem("theme");
+if (currentTheme) {
+  body.setAttribute("data-theme", currentTheme);
+  if (currentTheme === "light") {
+    darkModeToggle.innerHTML = '<span class="material-symbols-rounded">dark_mode</span>';
+  }
+}
+
+darkModeToggle.addEventListener("click", () => {
+  if (body.getAttribute("data-theme") === "light") {
+    body.setAttribute("data-theme", "dark");
+    localStorage.setItem("theme", "dark");
+    darkModeToggle.innerHTML = '<span class="material-symbols-rounded">dark_mode</span>';
+  } else {
+    body.setAttribute("data-theme", "light");
+    localStorage.setItem("theme", "light");
+    darkModeToggle.innerHTML = '<span class="material-symbols-rounded">light_mode</span>';
+  }
+});
 function apply(operation, ...args) {
   // kita bisa menambahkan kode lain sebelum operation dijalankan.
 

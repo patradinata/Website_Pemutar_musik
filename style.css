@@ -2,7 +2,7 @@
   --eerie-black_a95: hsla(204, 9%, 11%, 0.95);
   --eerie-black_a50: hsla(204, 9%, 11%, 0.5);
   --eerie-black: hsl(204, 9%, 11%);
-  --gainsboro: hsl(225, 7%, 89%);
+  --gainsboro: hsl(285, 7%, 89%);
   --charcoal: hsl(203, 9%, 28%);
   --silver-sand: hsl(208, 12%, 78%);
   --light-sky-blue: crimson;
@@ -62,6 +62,36 @@
   --transition-2: 300ms cubic-bezier(0.2, 0, 0, 1);
 }
 
+[data-theme="light"] {
+  --background: var(--gainsboro);
+  --background: var(--gainsboro);
+  --on-background: var(--eerie-black);
+  --surface-variant: var(--silver-sand);
+  --on-survace-vvariant: var(--charcoal);
+  --primary: var(--prussian-blue);
+  --on-primary: var(--light-sky-blue);
+}
+
+body[data-theme="light"] {
+  background-color: var(--background);
+  color: var(--on-background);
+}
+
+body[data-theme="light"] .player {
+  background-image: linear-gradient(180deg, hsla(225, 7%, 89%, 0.9) 60%, transparent 120%);
+}
+
+body[data-theme="light"] .music-banner {
+  background-color: var(--surface-variant);
+}
+
+body[data-theme="light"] .btn-icon:hover {
+  background-color: var(--on-surface-variant-hover);
+}
+
+body[data-theme="light"] .btn-icon:is(:focus, :focus-visible) {
+  background-color: var(--on-surface-variant-focus);
+}
 /*-----------------------------------*\
   #RESET
 \*-----------------------------------*/
@@ -238,6 +268,11 @@ body:hover::-webkit-scrollbar-thumb {
   backdrop-filter: blur(50px);
   box-shadow: var(--shadow-1);
   z-index: 2;
+}
+
+.top-bar-actions {
+  display: flex;
+  gap: 1rem;
 }
 
 .logo {
