@@ -66,8 +66,8 @@ const musicData = [
     musicPath: "nganggur.mp3",
   },
   {
-    backgroundImage: "poster-2.jpg",
-    posterUrl: "poster-2.jpg",
+    backgroundImage: "abung.jpg",
+    posterUrl: "abung.jpg",
     title: "Ku Puja Puja",
     album: "Ku Puja Puja",
     year: 2022,
@@ -122,8 +122,8 @@ const musicData = [
     musicPath: "kebesaranmu.mp3",
   },
   {
-    backgroundImage: "rama.jpg",
-    posterUrl: "rama.jpg",
+    backgroundImage: "poster-3.jpg",
+    posterUrl: "poster-3.jpg",
     title: "darah-juang",
     album: "darah-juang",
     year: 2022,
@@ -159,10 +159,6 @@ const musicData = [
     musicPath: "tandamata.mp3",
   },
 ];
-
-/**
- * add eventListnere on all elements that are passed
- */
 
 const addEventOnElements = function (elements, eventType, callback) {
   for (let i = 0, len = elements.length; i < len; i++) {
@@ -450,3 +446,25 @@ const withDiscount = apply(discount, 25, productPrice);
 
 console.log("Product price:", productPrice); // Output: Product price: 400
 console.log("With discount 25%:", withDiscount); // Output: With discount 25%: 300
+
+function getProducts() {
+  return [
+    {
+      name: "Product 1",
+      price: 1000,
+    },
+    {
+      name: "Product 2",
+      price: 2000,
+    },
+    {
+      name: "Product 3",
+      price: 3000,
+    },
+  ];
+}
+
+console.log(getProducts());
+
+const order = "Kopi ekspresso";
+console.log(`saya memesan ${order} di krui`);
