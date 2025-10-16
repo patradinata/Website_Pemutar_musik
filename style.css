@@ -196,6 +196,7 @@ body:hover::-webkit-scrollbar-thumb {
 .wrapper {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .title-lg {
@@ -210,9 +211,11 @@ body:hover::-webkit-scrollbar-thumb {
   color: var(--on-surface-variant);
   width: 40px;
   height: 40px;
+  border-radius: var(--radius-circle);
   display: grid;
   place-items: center;
-  border-radius: var(--radius-circle);
+  min-width: 44px;
+  min-height: 44px;
 }
 
 .btn-icon:hover {
@@ -263,7 +266,7 @@ body:hover::-webkit-scrollbar-thumb {
   min-width: 250px;
   width: 100%;
   height: 64px;
-  padding-inline: 20px;
+  padding-inline: 25px;
   justify-content: space-between;
   backdrop-filter: blur(50px);
   box-shadow: var(--shadow-1);
@@ -304,7 +307,7 @@ body:hover::-webkit-scrollbar-thumb {
   width: 100%;
   display: grid;
   grid-template-rows: 1fr max-content;
-  gap: 24px;
+  gap: 40px;
 }
 
 .music-banner {
@@ -345,6 +348,7 @@ body:hover::-webkit-scrollbar-thumb {
 .range {
   appearance: none;
   cursor: pointer;
+  /* background-color: #ff0000; */
 }
 
 .range::-webkit-slider-runnable-track {
@@ -361,7 +365,7 @@ body:hover::-webkit-scrollbar-thumb {
   top: 0;
   left: 0;
   width: 0;
-  height: 6px;
+  height: 7px;
   background-color: var(--primary);
   border-radius: var(--radius-pill);
   pointer-events: none;
@@ -391,7 +395,14 @@ body:hover::-webkit-scrollbar-thumb {
 }
 
 .player-control {
-  justify-content: space-evenly;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 12px;
+  /* background-color: var(--surface-variant); */
+  border-radius: 8px;
+  box-shadow: var(--shadow-2);
 }
 
 .player-control .toggle.active {
@@ -587,7 +598,7 @@ body:hover::-webkit-scrollbar-thumb {
    */
 
   .player {
-    --padding: 48px;
+    padding: 48px;
     text-align: left;
     flex-grow: 1;
     align-items: center;

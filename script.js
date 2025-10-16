@@ -1,10 +1,10 @@
 "use strict";
 
-// all music
+// Data musik
 const musicData = [
   {
-    backgroundImage: "poster-1.jpg",
-    posterUrl: "poster-1.jpg",
+    backgroundImage: "pantai.jpg",
+    posterUrl: "pantai.jpg",
     title: "Kau Tipu Aku",
     album: "Kembali Pulang",
     year: 2008,
@@ -12,8 +12,8 @@ const musicData = [
     musicPath: "Kau Tipu Aku.mp3",
   },
   {
-    backgroundImage: "poster-2.jpg",
-    posterUrl: "poster-2.jpg",
+    backgroundImage: "foto_yudisium.jpg",
+    posterUrl: "foto_yudisium.jpg",
     title: "Kehilanganmu berat bagiku",
     album: "Pujaan Hati",
     year: 2008,
@@ -39,8 +39,8 @@ const musicData = [
     musicPath: "music-7.mp3",
   },
   {
-    backgroundImage: "poster-5.jpg",
-    posterUrl: "poster-5.jpg",
+    backgroundImage: "poster-3.jpg",
+    posterUrl: "poster-3.jpg",
     title: "Bidadari Sarugo",
     album: "Shany",
     year: 2024,
@@ -66,8 +66,8 @@ const musicData = [
     musicPath: "nganggur.mp3",
   },
   {
-    backgroundImage: "abung.jpg",
-    posterUrl: "abung.jpg",
+    backgroundImage: "poster-3.jpg",
+    posterUrl: "poster-3.jpg",
     title: "Ku Puja Puja",
     album: "Ku Puja Puja",
     year: 2022,
@@ -85,8 +85,8 @@ const musicData = [
     musicPath: "Ramadhan Tajalla.mp3",
   },
   {
-    backgroundImage: "poster-4.jpg",
-    posterUrl: "poster-4.jpg",
+    backgroundImage: "poster-2.jpg",
+    posterUrl: "poster-2.jpg",
     title: "Cintaku Kau terlantarkan",
     album: "Cintaku Kau terlantarkan",
     year: 2022,
@@ -94,18 +94,18 @@ const musicData = [
     musicPath: "Adista-Cintaku kau terlantarkan.mp3",
   },
   {
-    backgroundImage: "poster-5.jpg",
-    posterUrl: "poster-5.jpg",
+    backgroundImage: "poster-2.jpg",
+    posterUrl: "poster-2.jpg",
     title: "Dj senja yang datang diujung langit",
     album: "Dj senja yang datang diujung langit",
-    year: 2023,
+    year: 2024,
     artist: "Putri Ariani",
     musicPath: "dj-senja.mp3",
   },
 
   {
-    backgroundImage: "poster-4.jpg",
-    posterUrl: "poster-4.jpg",
+    backgroundImage: "poster-2.jpg",
+    posterUrl: "poster-2.jpg",
     title: "Tresno Liyane",
     album: "Tresno Liyane",
     year: 2022,
@@ -150,13 +150,13 @@ const musicData = [
     musicPath: "mardua-holong.mp3",
   },
   {
-    backgroundImage: "andika.jpg",
-    posterUrl: "andika.jpg",
-    title: "Tanda Mata",
-    album: "Lagu Lampung",
-    year: 2021,
-    artist: "Yanti",
-    musicPath: "tandamata.mp3",
+    backgroundImage: "poster-2.jpg",
+    posterUrl: "poster-2.jpg",
+    title: "Cintaku kau terlantarkan",
+    album: "Adista",
+    year: 2022,
+    artist: "Adista",
+    musicPath: "Adista-Cintaku kau terlantarkan.mp3",
   },
 ];
 
@@ -189,21 +189,15 @@ for (let i = 0, len = musicData.length; i < len; i++) {
 const playlistSideModal = document.querySelector("[data-playlist]");
 const playlistTogglers = document.querySelectorAll("[data-playlist-toggler]");
 const overlay = document.querySelector("[data-overlay]");
-
 const togglePlaylist = function () {
   playlistSideModal.classList.toggle("active");
   overlay.classList.toggle("active");
-  document.body.classList.toggle("modalActive");
+  document.body.classList.toggle("modalOverlay");
 };
 
 addEventOnElements(playlistTogglers, "click", togglePlaylist);
 
-/**
- * PlayList Item
- *
- * hapus status aktif dari musik yang terakhir diputar
- * dan tambahkan status aktif pada musik yang diklik
- */
+// playlist item
 const playlistItems = document.querySelectorAll("[data-playlist-item]");
 let currentMusic = 0;
 let lastPlayedMusic = 0;
@@ -281,8 +275,7 @@ const playMusic = function () {
 };
 
 playBtn.addEventListener("click", playMusic);
-
-/** update running time while playing music */
+// fungsi update running time
 
 const playerRunningTime = document.querySelector("[data-running-time");
 
@@ -294,12 +287,7 @@ const updateRunningTime = function () {
   isMusicEnd();
 };
 
-/**
- * RANGE FILL WIDTH
- *
- * change 'rangeFill' width, while changing range value
- */
-
+// update range
 const ranges = document.querySelectorAll("[data-range]");
 const rangeFill = document.querySelector("[data-range-fill]");
 
@@ -313,27 +301,26 @@ const updateRangeFill = function () {
 addEventOnElements(ranges, "input", updateRangeFill);
 
 // seek musik
-const seek = function () {
+const seekMusic = function () {
   audioSource.currentTime = playerSeekRange.value;
   playerRunningTime.textContent = getTimecode(playerSeekRange.value);
 };
 
-playerSeekRange.addEventListener("input", seek);
+playerSeekRange.addEventListener("input", seekMusic);
 
-// End musik
+//? Function End Music
 const isMusicEnd = function () {
   if (audioSource.ended) {
     playBtn.classList.remove("active");
     audioSource.currentTime = 0;
     playerSeekRange.value = audioSource.currentTime;
-    playerRunningTime.textContent = getTimecode(audioSource.currentTime);
+    playerRunningTime.textContent = getTimecode(audioSource, currentMusic);
     updateRangeFill();
   }
 };
 
-// skip next musik
+//? Skip Music
 const playerSkipNextBtn = document.querySelector("[data-skip-next]");
-
 const skipNext = function () {
   lastPlayedMusic = currentMusic;
   if (isShuffled) {
@@ -367,7 +354,7 @@ const skipPrev = function () {
 
 playerSkipPrevBtn.addEventListener("click", skipPrev);
 
-// Shuffle Musik
+//? Toogle class active unttuk Shuffle Musik Random?
 const getRandomMusic = () => Math.floor(Math.random() * musicData.length);
 const shuffleMusic = () => (currentMusic = getRandomMusic());
 
@@ -380,11 +367,10 @@ const shuffle = function () {
 };
 
 playerShuffleBtn.addEventListener("click", shuffle);
+//? refeat music
+const playerRepeatBtn = document.querySelector("[data-repeat]");
 
-// refeat music
-const playerRefeatBtn = document.querySelector("[data-repeat]");
-
-const repeat = function () {
+const repeatMusic = function () {
   if (!audioSource.loop) {
     audioSource.loop = true;
     this.classList.add("active");
@@ -394,7 +380,7 @@ const repeat = function () {
   }
 };
 
-playerRefeatBtn.addEventListener("click", repeat);
+playerRepeatBtn.addEventListener("click", repeatMusic);
 
 // music volume
 const playerVolumeRange = document.querySelector("[data-volume]");
@@ -419,17 +405,15 @@ playerVolumeRange.addEventListener("input", changeVolume);
 const muteVolume = function () {
   if (!audioSource.muted) {
     audioSource.muted = true;
-    playerVolumeBtn.children[0].textContent = "volume_off";
+    playerVolumeBtn.children[0].textContent = "mute_volume";
   } else {
-    changeVolume();
+    audioSource.muted = false;
   }
 };
 
-playerVolumeBtn.addEventListener("click", muteVolume);
-
-const darkModeToggle = document.getElementById("dark-mode-toggle");
+// Dark mode  dengan penyimpanan localStorage
+const darkModeToggle = document.querySelector("#dark-mode-toggle");
 const body = document.body;
-
 const currentTheme = localStorage.getItem("theme");
 if (currentTheme) {
   body.setAttribute("data-theme", currentTheme);
@@ -449,44 +433,3 @@ darkModeToggle.addEventListener("click", () => {
     darkModeToggle.innerHTML = '<span class="material-symbols-rounded">light_mode</span>';
   }
 });
-function apply(operation, ...args) {
-  // kita bisa menambahkan kode lain sebelum operation dijalankan.
-
-  return operation(...args);
-}
-
-function sum(a, b, c) {
-  return a + b + c;
-}
-
-function discount(disc, value) {
-  return value - (disc / 100) * value;
-}
-
-const productPrice = apply(sum, 100, 100, 200);
-const withDiscount = apply(discount, 25, productPrice);
-
-console.log("Product price:", productPrice); // Output: Product price: 400
-console.log("With discount 25%:", withDiscount); // Output: With discount 25%: 300
-
-function getProducts() {
-  return [
-    {
-      name: "Product 1",
-      price: 1000,
-    },
-    {
-      name: "Product 2",
-      price: 2000,
-    },
-    {
-      name: "Product 3",
-      price: 3000,
-    },
-  ];
-}
-
-console.log(getProducts());
-
-const order = "Kopi ekspresso";
-console.log(`saya memesan ${order} di krui`);
