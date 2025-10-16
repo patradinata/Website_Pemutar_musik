@@ -21,8 +21,8 @@ const musicData = [
     musicPath: "kangen-band.mp3",
   },
   {
-    backgroundImage: "poster-3.jpg",
-    posterUrl: "poster-3.jpg",
+    backgroundImage: "foto_yudisium_with_ortu.jpg",
+    posterUrl: "foto_yudisium_with_ortu.jpg",
     title: "Anak Lanang",
     album: "No Spirit",
     year: 2022,
@@ -48,8 +48,8 @@ const musicData = [
     musicPath: "music-6.mp3",
   },
   {
-    backgroundImage: "poster-2.jpg",
-    posterUrl: "poster-2.jpg",
+    backgroundImage: "foto_wisuda_sendiri.JPG",
+    posterUrl: "foto_wisuda_sendiri.JPG",
     title: "Mencoba untuk setia",
     album: "Mencoba untuk setia",
     year: 2024,
